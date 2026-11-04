@@ -4,7 +4,7 @@
 
 - Deck web statico, senza build e senza dipendenze, che funziona anche offline. Creato e mantenuto con la Skill `slide-workshop-ai`.
 - È una risorsa del progetto `workshop-ai-per-architette`, con il proprio repository Git e la propria pubblicazione (GitHub Pages, ramo `main`, indirizzo previsto `jonathanlivingston86.github.io/productivity-workshop/`).
-- Sostituisce il vecchio mini-sito `prompt-productivity` (giugno 2026), che va spento solo con l'ok esplicito di Andrea.
+- Sostituisce il vecchio mini-sito `prompt-productivity` (giugno 2026), spento e archiviato su GitHub il 4 novembre 2026.
 - Leggi `docs/STATUS.md` per lo stato.
 
 ## Regole di scrittura

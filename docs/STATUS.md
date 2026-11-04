@@ -4,14 +4,15 @@ Ultimo aggiornamento: 4 novembre 2026.
 
 ## Da fare
 
-- [ ] Seconda revisione di Andrea dopo le correzioni del 4 novembre (nuovo ordine, slide filtro, prompt in italiano, loghi).
 - [ ] Verificare dal proprio account ChatGPT la disponibilità in Italia del connettore Gmail e dell'estensione Chrome: le fonti trovate sono solo secondarie e in parte contraddittorie.
-- [ ] Creare il repository Git e pubblicare su GitHub Pages (solo con ok di Andrea).
-- [ ] Spegnere il vecchio sito `prompt-productivity` (Pages disattivato e repository archiviato, oppure cancellato: scelta di Andrea) e aggiornare il link tinyurl `workshop-productivity` se lo gestisce lui.
+- [ ] Aggiornare il link tinyurl `workshop-productivity` verso il nuovo indirizzo: lo gestisce Andrea, oggi porta al vecchio sito spento.
 - [ ] Prova dal vivo: proiettore, QR e Copia dal telefono.
 
 ## Completate
 
+- [x] Pubblicato su GitHub Pages · prova: repository pubblico `JonathanLivingston86/productivity-workshop`, build "built" il 4 novembre 2026; pagina, QR, loghi, script e i due zip rispondono 200; `kit-presentatore` risponde 404.
+- [x] Vecchio sito ritirato · prova: Pages di `prompt-productivity` disattivato (API 404), repository archiviato con rimando al nuovo deck, copie locali spostate nel Cestino di Windows, il 4 novembre 2026.
+- [x] Seconda revisione di Andrea applicata · prova: 32 slide (dettatura unita nella 5, nuovo esempio di meta prompting, titolo della 9, card della 26 allargata, cervello prima dei file, chiusura riscritta); controllo impaginazione 0 problemi a 1024x768, 1280x720, 1920x1080; dispensa 32 slide e 20 blocchi `.extra`; 375 px senza scorrimento laterale; PDF rigenerato e controllato a campione.
 - [x] Mini app rivista con i sei cappelli · prova: pulsante "Invia su WhatsApp" e uso al primo incontro sul tablet, approvati da Andrea il 4 novembre 2026.
 - [x] Correzioni del 4 novembre 2026 · prova: 33 slide, 0 pause; 3 slide filtro nuove (chiedere meglio, Deep Research, Gemini Notebook); 13 prompt in italiano; fondo nero solo per soglie; loghi in `assets/loghi/`; controllo impaginazione 0 problemi a 1024x768, 1280x720, 1920x1080; dispensa 33 slide e 20 blocchi `.extra`; telefono 375 px senza scorrimento laterale; PDF rigenerato e controllato a campione.
 - [x] Cartelle di prova scaricabili · prova: `esempi/documenti-di-prova.zip` (0,5 MB, 9 file inventati) e `esempi/immagini-di-prova.zip` (2,5 MB, 14 foto CC0), entrambi serviti con stato 200 dal server locale.
