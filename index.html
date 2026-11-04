@@ -1,0 +1,772 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Productivity · Workshop</title>
+<meta name="description" content="Slide e prompt del workshop Productivity: dettatura, prompt, scrittura, ricerca, agenti, file e browser con l'AI.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body class="presenter">
+
+<main id="deck">
+
+<!-- Fondi: nero = soglia (titolo, slide filtro che apre un argomento nuovo, saluti); bianco = spiegazione; grigio = pratica (prompt da copiare, esercizi). -->
+
+<!-- ============ APERTURA ============ -->
+<section class="slide" data-title="Segui da qui">
+  <div class="in linkslide">
+    <p class="eyebrow">Productivity · Workshop</p>
+    <h1>Segui da qui.</h1>
+    <p class="lead">Apri il link o inquadra il codice. Trovi le slide e tutti i prompt da copiare.</p>
+    <img class="qr" src="assets/qr.png" alt="Codice QR per aprire il deck">
+    <p class="url">jonathanlivingston86.github.io/productivity-workshop</p>
+  </div>
+</section>
+
+<section class="slide dark" data-title="Productivity">
+  <div class="in">
+    <p class="eyebrow">Workshop · AI per architetti</p>
+    <h1 class="hero">Productivity</h1>
+    <p class="lead big">Email, file, verbali e ricerche: come passarli all'AI senza perdere il controllo.</p>
+    <p class="small mt">Andrea Lucarelli · ai.andrealucarelli.com</p>
+  </div>
+</section>
+
+<section class="slide" data-title="Il tuo conto delle ore" data-steps="1">
+  <div class="in dense">
+    <p class="eyebrow">Per cominciare</p>
+    <h2>Quante ore vanno via ogni settimana?</h2>
+    <p class="lead">Conta le ore che passi su email, file, verbali e ricerche. Poi sposta il cursore sul tuo numero.</p>
+    <div class="conto" data-conto data-interactive data-step="1">
+      <label class="slider">Ore a settimana <input type="range" min="1" max="20" value="5" aria-label="Ore a settimana"> <b data-out="h">5</b></label>
+      <div class="numeri">
+        <div><b data-out="anno">230</b><span>ore all'anno</span></div>
+        <div class="hl"><b data-out="gg">29</b><span>giornate di lavoro</span></div>
+        <div><b data-out="sett">5,8</b><span>settimane piene</span></div>
+      </div>
+    </div>
+  </div>
+  <div class="extra">
+    <h4>Come è fatto il conto</h4>
+    <p>Ore a settimana per 46 settimane lavorative. Le giornate sono da 8 ore, le settimane da 40. Con 5 ore a settimana fanno 230 ore, cioè 29 giornate.</p>
+  </div>
+</section>
+
+<!-- ============ 01 INPUT ============ -->
+<section class="slide dark" data-title="Tastiera contro voce">
+  <div class="in dense">
+    <p class="eyebrow">01 · Input</p>
+    <h2>Tastiera contro voce.</h2>
+    <p class="compito">"Ciao Marco, il sopralluogo slitta a giovedì alle 10. Porta le planimetrie catastali e le foto del bagno. Se non riesci, dimmelo entro domani."</p>
+    <div class="gara" data-gara data-interactive>
+      <div class="crono" data-crono="tastiera"><h3><svg viewBox="0 0 48 48" aria-hidden="true"><rect x="4" y="12" width="40" height="24" rx="4" fill="none" stroke="currentColor" stroke-width="2.4"/><path d="M11 20h2M17 20h2M23 20h2M29 20h2M35 20h2M14 28h20" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg>Tastiera</h3><span class="tempo">0,0 s</span><button class="btn via">Via</button></div>
+      <div class="crono" data-crono="voce"><h3><svg viewBox="0 0 48 48" aria-hidden="true"><rect x="18" y="6" width="12" height="22" rx="6" fill="none" stroke="currentColor" stroke-width="2.4"/><path d="M11 22a13 13 0 0 0 26 0M24 35v7M17 42h14" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg>Voce</h3><span class="tempo">0,0 s</span><button class="btn via">Via</button></div>
+    </div>
+    <p class="esito" data-esito></p>
+  </div>
+  <div class="extra">
+    <h4>Il dato</h4>
+    <p>In uno studio di Stanford del 2016, dettare un messaggio sul telefono è stato circa 3 volte più veloce che scriverlo con la tastiera, con il 20% di errori in meno. Fonte: <a href="https://news.stanford.edu/stories/2016/08/stanford-study-speech-recognition-faster-texting">Stanford News, 24 agosto 2016</a>.</p>
+    <p>Prova anche tu: cronometra lo stesso messaggio scritto e dettato.</p>
+  </div>
+</section>
+
+<section class="slide" data-title="Dettare è tre volte più veloce" data-steps="1">
+  <div class="in dense">
+    <p class="eyebrow">01 · Input</p>
+    <h2>Dettare è tre volte più veloce.</h2>
+    <p class="lead">Puoi parlare come ti viene, con pause e ripensamenti: l'AI toglie le esitazioni e mette la punteggiatura.</p>
+    <div class="io">
+      <div class="iocol">
+        <h3>Gli dai</h3>
+        <div class="item"><svg viewBox="0 0 48 48" aria-hidden="true"><rect x="18" y="6" width="12" height="22" rx="6" fill="none" stroke="currentColor" stroke-width="2.4"/><path d="M11 22a13 13 0 0 0 26 0M24 35v7M17 42h14" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg><span>La tua voce<small>anche con pause e ripensamenti</small></span></div>
+      </div>
+      <div class="iomid" aria-hidden="true"><svg viewBox="0 0 120 60"><path d="M6 30h90m-14-12l14 12-14 12" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg><b>Dettatura con AI</b></div>
+      <div class="iocol">
+        <h3>Ottieni</h3>
+        <div class="item"><svg viewBox="0 0 48 48" aria-hidden="true"><rect x="10" y="6" width="28" height="36" rx="5" fill="none" stroke="currentColor" stroke-width="2.4"/><path d="M17 19l4 4 8-8M17 32h14" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Testo pulito<small>con punteggiatura, elenchi, paragrafi</small></span></div>
+      </div>
+    </div>
+    <div class="who" data-step="1">
+      <h3>Con cosa dettare</h3>
+      <div class="whorow">
+        <div class="panel"><h3>Già nel computer</h3><p class="small">Windows: tasto Windows + H. Mac: premi due volte Fn. Gratis, in qualsiasi programma.</p></div>
+        <div class="panel sticker"><img class="logo" src="assets/loghi/openai.svg" alt="ChatGPT"><h3>Voce nella chat</h3><p class="small">Il microfono è nella casella di ChatGPT, Claude e Gemini, anche sul computer.</p></div>
+        <div class="panel sticker"><img class="logo" src="assets/loghi/wispr.svg" alt="Wispr Flow"><h3>App con AI</h3><p class="small">Wispr Flow e simili: in qualsiasi programma, testo già ripulito. A pagamento.</p></div>
+      </div>
+    </div>
+    <p class="small">Parti dalla prima. Passa alla terza se detti più di un'ora al giorno.</p>
+  </div>
+  <div class="extra">
+    <h4>Dove la usi</h4>
+    <ul>
+      <li>Nei prompt: detti tutto il contesto in un minuto, invece di scriverne tre righe. Con gli agenti darai istruzioni lunghe, spesso in programmi senza il pulsante del microfono: lì serve la dettatura del computer.</li>
+      <li>Nelle email: detti la sostanza, l'AI la mette in forma.</li>
+      <li>In sopralluogo: le note vocali diventano l'elenco dei lavori.</li>
+    </ul>
+    <h4>Note</h4>
+    <p>Wispr Flow è un esempio della categoria, non una sponsorizzazione. Prezzi e piani cambiano: controlla la pagina ufficiale prima di abbonarti. Su alcuni telefoni Android recenti la dettatura con AI è già nella tastiera.</p>
+    <p>Quando detti un prompt, parla come se spiegassi il lavoro a un collaboratore nuovo. Più contesto dai, migliore è il risultato.</p>
+  </div>
+</section>
+
+<!-- ============ 02 · 03 FILTRO ============ -->
+<section class="slide dark filtro" data-title="Fatti aiutare a chiedere" data-steps="2">
+  <div class="in">
+    <p class="eyebrow">02 · 03 · Chiedere meglio</p>
+    <h2>Fatti aiutare a chiedere.</h2>
+    <p class="lead">La qualità della risposta dipende dalla richiesta. Due tecniche per scriverla bene senza essere esperti.</p>
+    <div class="vignette due">
+      <div class="vign" data-step="1">
+        <svg viewBox="0 0 240 130" aria-hidden="true"><rect x="8" y="46" width="78" height="38" rx="10" fill="none" stroke="currentColor" stroke-width="2.5"/><path d="M22 84l-6 12 16-12" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round"/><path d="M20 65h52" stroke="currentColor" stroke-width="3" stroke-linecap="round"/><path d="M98 65h36m-10-9l10 9-10 9" fill="none" stroke="#2997ff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><path d="M116 38l3 7 7 3-7 3-3 7-3-7-7-3 7-3z" fill="#2997ff"/><rect x="148" y="10" width="84" height="112" rx="8" fill="none" stroke="currentColor" stroke-width="2.5"/><path d="M160 28h40M160 44h60M160 56h60M160 68h48M160 84h60M160 96h60M160 108h34" stroke="#2997ff" stroke-width="3" stroke-linecap="round"/></svg>
+        <span class="n">02 · Meta prompting</span>
+        <h3>Scrivi una riga, l'AI scrive il prompt.</h3>
+        <p>Da "scrivi al cliente che il preventivo è salito" a istruzioni complete, pronte da incollare.</p>
+      </div>
+      <div class="vign" data-step="2">
+        <svg viewBox="0 0 240 130" aria-hidden="true"><rect x="10" y="8" width="96" height="30" rx="10" fill="none" stroke="#2997ff" stroke-width="2.5"/><text x="58" y="30" text-anchor="middle" font-size="20" font-weight="700" fill="#2997ff">?</text><rect x="132" y="38" width="98" height="26" rx="10" fill="currentColor" opacity=".22"/><path d="M146 51h68" stroke="currentColor" stroke-width="3" stroke-linecap="round"/><rect x="10" y="68" width="96" height="30" rx="10" fill="none" stroke="#2997ff" stroke-width="2.5"/><text x="58" y="90" text-anchor="middle" font-size="20" font-weight="700" fill="#2997ff">?</text><rect x="132" y="98" width="98" height="26" rx="10" fill="currentColor" opacity=".22"/><path d="M146 111h52" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></svg>
+        <span class="n">03 · Reverse prompting</span>
+        <h3>L'AI ti fa le domande, tu rispondi.</h3>
+        <p>Le domande tirano fuori quello che non avevi pensato di dire. Il risultato arriva alla fine.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 02 META PROMPTING ============ -->
+<section class="slide" data-title="Meta prompting">
+  <div class="in dense">
+    <p class="eyebrow">02 · Meta prompting</p>
+    <h2>Da una riga a un prompt completo.</h2>
+    <p class="lead">Dai all'AI la richiesta grezza: lei la trasforma in istruzioni con ruolo, dati da chiedere, struttura e tono.</p>
+    <div class="io">
+      <div class="iocol">
+        <h3>Gli dai</h3>
+        <div class="item"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M8 10h32a3 3 0 0 1 3 3v18a3 3 0 0 1-3 3H20l-9 7v-7H8a3 3 0 0 1-3-3V13a3 3 0 0 1 3-3z" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round"/><path d="M14 19h20M14 25h12" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg><span>"Scrivi al cliente che il preventivo dell'impresa è salito del 15%"<small>una riga, anche dettata</small></span></div>
+      </div>
+      <div class="iomid" aria-hidden="true"><svg viewBox="0 0 120 60"><path d="M6 30h90m-14-12l14 12-14 12" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg><b>Meta-prompt</b></div>
+      <div class="iocol">
+        <h3>Ottieni</h3>
+        <div class="item"><svg viewBox="0 0 48 48" aria-hidden="true"><rect x="10" y="6" width="28" height="36" rx="5" fill="none" stroke="currentColor" stroke-width="2.4"/><path d="M17 15h14M17 22h14M17 29h9" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg><span>Un prompt completo<small>"Sei un architetto che scrive a un cliente privato. Prima chiedimi quali voci sono aumentate e perché. Spiega la differenza in euro, proponi due alternative, chiudi con il prossimo passo. Tono calmo, niente gergo."</small></span></div>
+      </div>
+    </div>
+    <p class="small">Lo incolli in una chat nuova, rispondi alle domande e ottieni la mail. Lo salvi e lo riusi alla prossima variazione di costi.</p>
+  </div>
+</section>
+
+<section class="slide gray" data-title="Il meta-prompt">
+  <div class="in dense">
+    <p class="eyebrow">02 · Meta prompting</p>
+    <h2>Il meta-prompt da tenere a portata.</h2>
+    <p class="lead">Incollalo, sostituisci le parti in maiuscolo, poi usa il prompt che ti restituisce.</p>
+    <div class="prompt"><span class="tag">Meta-prompt</span><pre id="p-meta">Sei un esperto di prompt. Trasforma la mia richiesta grezza in un prompt ottimizzato per [STRUMENTO].
+La mia richiesta: [RICHIESTA GREZZA]
+Se manca qualcosa di essenziale, prima di scrivere fammi al massimo 5 domande.
+Il prompt finale deve contenere: ruolo, contesto, obiettivo, passaggi, formato del risultato, vincoli.
+Mantieni tutti i fatti che ti ho dato. Non inventare dati e non aggiungere frasi generiche.</pre><button class="copy" data-copy-from="p-meta">Copia</button></div>
+  </div>
+  <div class="extra">
+    <h4>Come usarlo</h4>
+    <p>[STRUMENTO]: dove userai il prompt finale, per esempio ChatGPT, Claude, Gemini, la ricerca approfondita o un agente. [RICHIESTA GREZZA]: quello che vuoi, anche dettato.</p>
+    <p>In alternativa, in ChatGPT apri "GPT" e cerca un GPT di meta prompting: fanno lo stesso lavoro con istruzioni già pronte.</p>
+  </div>
+</section>
+
+<!-- ============ 03 REVERSE PROMPTING ============ -->
+<section class="slide" data-title="Reverse prompting" data-steps="1">
+  <div class="in dense">
+    <p class="eyebrow">03 · Reverse prompting</p>
+    <h2>Prima le domande, poi la risposta.</h2>
+    <p class="lead">Descrivi l'obiettivo, anche in modo grezzo, e chiedi all'AI di intervistarti prima di rispondere.</p>
+    <div class="cols2 stretch mt">
+      <ol class="rules">
+        <li>Descrivi l'obiettivo.</li>
+        <li>Chiedi le domande, una alla volta.</li>
+        <li>Rispondi a voce.</li>
+        <li>Solo alla fine chiedi il risultato.</li>
+      </ol>
+      <div class="qcard" data-step="1"><span class="n">Caso reale</span><h3>Il montacarichi.</h3><p>Uno studio doveva progettare un montacarichi per una persona con disabilità e non sapeva da dove partire.</p><p class="q">Quanti piani? Chi lo usa? Serve una fermata intermedia?</p><p class="do">Dalle risposte è uscito l'elenco dei requisiti da portare al fornitore.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide gray" data-title="Il reverse prompt">
+  <div class="in dense">
+    <p class="eyebrow">03 · Reverse prompting</p>
+    <h2>Due prompt: l'intervista e il riassunto.</h2>
+    <div class="cols2">
+      <div class="prompt"><span class="tag">1 · Intervistami</span><pre id="p-rev">Voglio [OBIETTIVO].
+Prima di rispondere, intervistami: una domanda alla volta, e aspetta la mia risposta.
+Se rispondo in modo vago, chiedimi un esempio concreto.
+Quando hai abbastanza informazioni, riassumi quello che hai capito e chiedimi conferma.
+Chiedimi sempre di budget, scadenze, vincoli e di chi decide.
+Non darmi la risposta finale prima della mia conferma.</pre><button class="copy" data-copy-from="p-rev">Copia</button></div>
+      <div class="prompt"><span class="tag">2 · Salva il contesto</span><pre id="p-rev2">Riassumi tutto quello che ti ho detto in questa chat in un file Markdown da riusare in una nuova chat.
+Usa titoli brevi: obiettivo, contesto, vincoli, decisioni, domande aperte.
+Riporta nomi, numeri e date esattamente come li ho detti, senza aggiungere informazioni.</pre><button class="copy" data-copy-from="p-rev2">Copia</button></div>
+    </div>
+    <p class="small">Il secondo prompt crea un file .md: testo semplice con titoli, che ogni AI legge. Ci torniamo con gli agenti.</p>
+  </div>
+  <div class="extra">
+    <h4>Come usarli</h4>
+    <p>[OBIETTIVO]: cosa vuoi ottenere, per esempio "preparare il preventivo per la ristrutturazione di un attico". Puoi chiedere da 5 a 30 domande: più è complesso il lavoro, più domande servono.</p>
+  </div>
+</section>
+
+<!-- ============ 04 SCRITTURA ============ -->
+<section class="slide" data-title="La tua voce in un file" data-steps="1">
+  <div class="in dense">
+    <p class="eyebrow">04 · Scrittura</p>
+    <h2>La tua voce, in un file.</h2>
+    <p class="lead">Senza una guida di stile l'AI scrive come tutti. Con 5 o 10 tuoi testi impara il tuo modo di scrivere.</p>
+    <div class="io">
+      <div class="iocol">
+        <h3>Gli dai</h3>
+        <div class="item"><svg viewBox="0 0 48 48" aria-hidden="true"><rect x="6" y="11" width="36" height="26" rx="5" fill="none" stroke="currentColor" stroke-width="2.4"/><path d="M8 14l16 12 16-12" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round"/></svg><span>Email, relazioni, post<small>scritti da te, senza AI</small></span></div>
+        <div class="item"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M8 10h32a3 3 0 0 1 3 3v18a3 3 0 0 1-3 3H20l-9 7v-7H8a3 3 0 0 1-3-3V13a3 3 0 0 1 3-3z" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round"/><path d="M14 19h20M14 25h12" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg><span>Le tue risposte all'intervista</span></div>
+      </div>
+      <div class="iomid" aria-hidden="true"><svg viewBox="0 0 120 60"><path d="M6 30h90m-14-12l14 12-14 12" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg><b>Analisi di stile</b></div>
+      <div class="iocol">
+        <h3>Ottieni</h3>
+        <div class="item"><svg viewBox="0 0 48 48" aria-hidden="true"><rect x="10" y="6" width="28" height="36" rx="5" fill="none" stroke="currentColor" stroke-width="2.4"/><path d="M17 15h14M17 22h14M17 29h9" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg><span>Guida di stile .md<small>cosa fare, cosa evitare</small></span></div>
+        <div class="item"><svg viewBox="0 0 48 48" aria-hidden="true"><rect x="10" y="6" width="28" height="36" rx="5" fill="none" stroke="currentColor" stroke-width="2.4"/><path d="M17 19l4 4 8-8M17 32h14" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Bozze che suonano come te</span></div>
+      </div>
+    </div>
+    <div class="who" data-step="1">
+      <h3>Dove la salvi</h3>
+      <div class="whorow">
+        <div class="panel sticker"><img class="logo" src="assets/loghi/claude.svg" alt="Claude"><p class="small">Claude: come Skill, un manuale che usa quando scrivi.</p></div>
+        <div class="panel sticker"><img class="logo" src="assets/loghi/openai.svg" alt="ChatGPT"><p class="small">ChatGPT: nelle istruzioni di un Progetto "Scrittura".</p></div>
+        <div class="panel sticker"><img class="logo" src="assets/loghi/gemini.svg" alt="Gemini"><p class="small">Gemini: in un Gem dedicato ai testi.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide" data-title="Spunto: le chat di WhatsApp">
+  <div class="in dense">
+    <img class="logo-fuori" src="assets/loghi/whatsapp.svg" alt="">
+    <p class="eyebrow">04 · Scrittura · Spunto</p>
+    <h2>Il tuo stile vero è nelle chat.</h2>
+    <p class="lead">Una chat con un amico dà il tono diretto, una con un cliente quello formale. Insieme fanno una guida a due registri.</p>
+    <div class="passi">
+      <div class="passo">
+        <svg viewBox="0 0 120 150" aria-hidden="true"><rect x="22" y="6" width="76" height="138" rx="14" fill="#fff" stroke="#1d1d1f" stroke-width="3"/><rect x="30" y="22" width="60" height="12" rx="3" fill="#f5f5f7"/><circle cx="82" cy="28" r="1.8" fill="#1d1d1f"/><circle cx="82" cy="23" r="1.8" fill="#1d1d1f"/><circle cx="82" cy="33" r="1.8" fill="#1d1d1f"/><rect x="48" y="40" width="44" height="40" rx="6" fill="#fff" stroke="#d2d2d7" stroke-width="2"/><rect x="54" y="48" width="30" height="5" rx="2.5" fill="#d2d2d7"/><rect x="54" y="58" width="24" height="5" rx="2.5" fill="#d2d2d7"/><rect x="52" y="67" width="36" height="8" rx="4" fill="#0071e3"/><rect x="30" y="92" width="40" height="10" rx="5" fill="#e3f4ed"/><rect x="50" y="108" width="40" height="10" rx="5" fill="#f5f5f7"/></svg>
+        <h3>Esporta la chat</h3><p>Apri la chat, menu, Esporta chat.</p>
+      </div>
+      <div class="passo">
+        <svg viewBox="0 0 120 150" aria-hidden="true"><rect x="22" y="6" width="76" height="138" rx="14" fill="#fff" stroke="#1d1d1f" stroke-width="3"/><rect x="34" y="40" width="52" height="22" rx="6" fill="#0071e3"/><rect x="42" y="48" width="36" height="6" rx="3" fill="#fff"/><rect x="34" y="70" width="52" height="22" rx="6" fill="#fff" stroke="#d2d2d7" stroke-width="2"/><rect x="42" y="78" width="36" height="6" rx="3" fill="#d2d2d7"/><rect x="44" y="104" width="32" height="22" rx="3" fill="none" stroke="#1d1d1f" stroke-width="3"/><path d="M45 106l15 11 15-11" fill="none" stroke="#1d1d1f" stroke-width="3" stroke-linejoin="round"/></svg>
+        <h3>Senza media</h3><p>Solo testo. Mandala a te stesso per email.</p>
+      </div>
+      <div class="passo">
+        <svg viewBox="0 0 120 150" aria-hidden="true"><path d="M36 26h36l14 14v70H36z" fill="#fff" stroke="#1d1d1f" stroke-width="3" stroke-linejoin="round"/><path d="M72 26v14h14" fill="none" stroke="#1d1d1f" stroke-width="3" stroke-linejoin="round"/><text x="61" y="80" text-anchor="middle" font-family="ui-monospace,Consolas,monospace" font-size="15" font-weight="700" fill="#0071e3">.txt</text><path d="M61 118v18m-8-8l8 8 8-8" fill="none" stroke="#0071e3" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <h3>Allegala all'AI</h3><p>Con il prompt della slide successiva.</p>
+      </div>
+    </div>
+  </div>
+  <div class="extra">
+    <h4>Il percorso esatto</h4>
+    <p>Android: apri la chat, tocca i tre puntini, Altro, Esporta chat, Senza media. iPhone: apri la chat, tocca il nome del contatto, Esporta chat, Senza media. I menu possono cambiare con gli aggiornamenti di WhatsApp.</p>
+    <h4>Privacy</h4>
+    <p>La chat contiene anche i messaggi dell'altra persona. Chiedi all'AI di analizzare solo i tuoi e di non riportare nomi, numeri o dati personali nella guida. Evita chat con dati sanitari, economici o legali.</p>
+  </div>
+</section>
+
+<section class="slide gray" data-title="Prompt di stile">
+  <div class="in dense">
+    <p class="eyebrow">04 · Scrittura</p>
+    <h2>Due strade per la guida di stile.</h2>
+    <div class="tabs" data-tabs="stile"><button class="tab">Dai tuoi testi</button><button class="tab">Da WhatsApp</button></div>
+    <div data-tabpanel="stile"><div class="prompt"><span class="tag">Clona il tuo stile</span><pre id="p-stile">Analizza dei testi scritti da me per capire il mio stile e saperlo riprodurre.
+Chiedimi un esempio alla volta. Dopo ognuno, descrivi in 3 righe cosa hai notato: lunghezza e ritmo delle frasi, tono, lessico, punteggiatura e impaginazione. Continua finché non scrivo "FINE".
+Poi scrivi la mia guida di stile in Markdown, con il titolo "Guida di stile di [NOME]", una sezione "Da fare" e una "Da evitare", e 3 testi brevi di prova: la risposta a una richiesta di preventivo, un post su un progetto finito, un sollecito per una consegna in ritardo.
+Ogni regola deve venire dai miei esempi reali.
+Non usare trattini lunghi, frasi del tipo "non è X, è Y" e slogan in gruppi di tre.</pre><button class="copy" data-copy-from="p-stile">Copia</button></div></div>
+    <div data-tabpanel="stile"><div class="prompt"><span class="tag">Da WhatsApp</span><pre id="p-wa">Ti allego delle chat di WhatsApp esportate. Nelle chat il mio nome è [IL TUO NOME].
+Analizza SOLO i miei messaggi. La chat 1 è con [AMICO O FAMILIARE] (registro informale), la chat 2 con [CLIENTE] (registro professionale).
+Scrivi una guida di stile in Markdown con i due registri: lunghezza delle frasi, lessico, punteggiatura, emoji, saluti di apertura e chiusura, espressioni ricorrenti. Aggiungi le liste "Da fare" e "Da evitare" e 2 testi di esempio per registro.
+Cita brevi esempi reali di come scrivo.
+Non riportare nella guida i messaggi dell'altra persona, nomi, numeri di telefono o dati personali.</pre><button class="copy" data-copy-from="p-wa">Copia</button></div></div>
+  </div>
+  <div class="extra">
+    <h4>Come usarli</h4>
+    <p>[NOME] e [IL TUO NOME]: il nome con cui compari nelle chat esportate. Rileggi la guida e correggila: è tua. Poi salvala come Skill, nelle istruzioni di un Progetto o in un Gem (slide "La tua voce, in un file").</p>
+  </div>
+</section>
+
+<!-- ============ 05 EMAIL ============ -->
+<section class="slide gray" data-title="Email dalla chat">
+  <div class="in dense">
+    <p class="eyebrow">05 · Email</p>
+    <h2>Cerca, riassume, prepara la bozza.</h2>
+    <p class="lead loghi-riga">Con il connettore <img src="assets/loghi/gmail.svg" alt=""> Gmail, <img src="assets/loghi/openai.svg" alt=""> ChatGPT legge la tua casella e scrive con la tua guida di stile. L'invio resta a te.</p>
+    <div class="cols2 wide-r">
+      <div class="io compact" style="grid-template-columns:1fr">
+        <div class="iocol">
+          <div class="item"><svg viewBox="0 0 48 48" aria-hidden="true"><circle cx="21" cy="21" r="12" fill="none" stroke="currentColor" stroke-width="2.4"/><path d="M30 30l11 11" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg><span>Trova le mail<small>"l'ultima del geometra sul condono"</small></span></div>
+          <div class="item"><svg viewBox="0 0 48 48" aria-hidden="true"><rect x="10" y="6" width="28" height="36" rx="5" fill="none" stroke="currentColor" stroke-width="2.4"/><path d="M17 15h14M17 22h14M17 29h9" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg><span>Riassume i punti aperti</span></div>
+          <div class="item"><svg viewBox="0 0 48 48" aria-hidden="true"><rect x="6" y="11" width="36" height="26" rx="5" fill="none" stroke="currentColor" stroke-width="2.4"/><path d="M8 14l16 12 16-12" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round"/></svg><span>Scrive la bozza<small>nel tuo stile, la invii tu</small></span></div>
+        </div>
+      </div>
+      <div class="prompt"><span class="tag">Email</span><pre id="p-mail">Cerca nella mia Gmail le ultime email di [MITTENTE] su [ARGOMENTO].
+Riassumi cosa chiedono e cosa è ancora in sospeso.
+Poi scrivi una bozza di risposta seguendo la mia guida di stile.
+Prima della bozza elenca i punti aperti.
+Non inviare niente: la mail la controllo e la mando io.</pre><button class="copy" data-copy-from="p-mail">Copia</button></div>
+    </div>
+  </div>
+  <div class="extra">
+    <h4>Se non trovi il connettore</h4>
+    <p>In ChatGPT il connettore Gmail si attiva da Impostazioni, alla voce delle app collegate. La disponibilità dipende dal piano e dal paese e cambia spesso: controlla la guida ufficiale di OpenAI. Se nel tuo account non c'è, lo stesso flusso funziona con Gemini dentro Gmail o con il connettore Gmail di Claude.</p>
+  </div>
+</section>
+
+<!-- ============ 06 CALL ============ -->
+<section class="slide" data-title="Dalla call al follow-up" data-steps="3">
+  <div class="in dense">
+    <p class="eyebrow">06 · Call</p>
+    <h2>Dalla call alla mail di follow-up.</h2>
+    <div class="panel"><svg class="vis flow" id="flusso-call" role="img" aria-label="Registri la call, la trascrivi, l'AI scrive verbale e mail di follow-up"></svg></div>
+    <p class="lead ink stepcap"><span>Prima di registrare, avvisa chi partecipa e chiedi il consenso.</span><span>Registri con lo strumento della call o con il telefono.</span><span class="loghi-riga">Trascrivi: <img src="assets/loghi/meet.svg" alt=""> Meet, Teams e <img src="assets/loghi/zoom.svg" alt=""> Zoom lo fanno, oppure carichi l'audio nella chat.</span><span>Con un prompt ottieni verbale e mail. Funziona anche con i vocali lunghi dei clienti.</span></p>
+  </div>
+  <script type="application/json" data-flow-for="flusso-call">
+  {
+    "cols": 4,
+    "boxes": [
+      { "id": "ca", "col": 0, "row": 0, "title": "Call", "sub": "con consenso", "group": "me" },
+      { "id": "re", "col": 1, "row": 0, "title": "Registra", "sub": "app o telefono", "group": "tool", "step": 1 },
+      { "id": "tr", "col": 2, "row": 0, "title": "Trascrivi", "sub": "testo completo", "group": "ai", "step": 2 },
+      { "id": "ve", "col": 3, "row": 0, "title": "Verbale", "sub": "chi fa cosa", "group": "out", "step": 3 },
+      { "id": "em", "col": 3, "row": 1, "title": "Email", "sub": "follow-up", "group": "out", "step": 3 }
+    ],
+    "arrows": [
+      { "from": "ca", "to": "re", "step": 1 },
+      { "from": "re", "to": "tr", "step": 2 },
+      { "from": "tr", "to": "ve", "step": 3 },
+      { "from": "tr", "to": "em", "step": 3 }
+    ]
+  }
+  </script>
+</section>
+
+<section class="slide gray" data-title="Prompt verbale e follow-up">
+  <div class="in dense">
+    <p class="eyebrow">06 · Call</p>
+    <h2>Il prompt del verbale.</h2>
+    <div class="prompt"><span class="tag">Verbale e follow-up</span><pre id="p-call">Questa è la trascrizione di una call con [CLIENTE] su [PROGETTO].
+1. Verbale: decisioni, punti aperti, chi fa cosa ed entro quando.
+2. Una mail di follow-up al cliente con la mia guida di stile, con decisioni e prossimi passi.
+Segna "da confermare" tutto quello che è ambiguo. Riporta date e numeri esattamente come sono stati detti.
+Non inventare impegni che nessuno ha preso.</pre><button class="copy" data-copy-from="p-call">Copia</button></div>
+    <p class="small">Rileggi sempre il verbale prima di mandarlo: un numero sbagliato in una trascrizione diventa un impegno scritto.</p>
+  </div>
+  <div class="extra">
+    <h4>Consenso</h4>
+    <p>Registrare una conversazione significa trattare dati personali di chi parla (GDPR, il regolamento europeo sulla protezione dei dati). Avvisa all'inizio, spiega a cosa serve la registrazione e quanto la tieni. Se qualcuno non è d'accordo, non registrare e detta un riassunto subito dopo la call. Informazione generale, non parere legale.</p>
+  </div>
+</section>
+
+<!-- ============ 07 DEEP RESEARCH ============ -->
+<section class="slide dark filtro" data-title="Deep Research" data-steps="3">
+  <div class="in">
+    <p class="eyebrow">07 · Deep Research</p>
+    <h2>Una ricerca di ore, fatta dall'AI.</h2>
+    <p class="lead">Deep Research, cioè ricerca approfondita: fai una domanda e l'AI lavora da sola per 5-30 minuti.</p>
+    <div class="vignette">
+      <div class="vign" data-step="1">
+        <svg viewBox="0 0 160 110" aria-hidden="true"><rect x="20" y="20" width="120" height="52" rx="14" fill="none" stroke="currentColor" stroke-width="2.5"/><path d="M42 72l-8 16 22-16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round"/><path d="M38 40h70M38 54h50" stroke="currentColor" stroke-width="3" stroke-linecap="round"/><text x="122" y="56" text-anchor="middle" font-size="26" font-weight="700" fill="#2997ff">?</text></svg>
+        <h3>Fai la domanda</h3><p>Meglio dopo un'intervista: reverse prompting.</p>
+      </div>
+      <div class="vign" data-step="2">
+        <svg viewBox="0 0 160 110" aria-hidden="true"><rect x="14" y="8" width="84" height="60" rx="6" fill="none" stroke="currentColor" stroke-width="2.5" opacity=".45"/><rect x="28" y="22" width="84" height="60" rx="6" fill="#1c1c1e" stroke="currentColor" stroke-width="2.5" opacity=".7"/><rect x="42" y="36" width="84" height="60" rx="6" fill="#1c1c1e" stroke="currentColor" stroke-width="2.5"/><path d="M42 46h84" stroke="currentColor" stroke-width="2.5"/><path d="M52 60h50M52 70h60M52 80h36" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" opacity=".6"/><circle cx="126" cy="74" r="13" fill="#1c1c1e" stroke="#2997ff" stroke-width="3"/><path d="M135 83l12 12" stroke="#2997ff" stroke-width="4" stroke-linecap="round"/></svg>
+        <h3>Legge decine di siti</h3><p>Apre le pagine, confronta, segue i link.</p>
+      </div>
+      <div class="vign" data-step="3">
+        <svg viewBox="0 0 160 110" aria-hidden="true"><rect x="40" y="6" width="80" height="98" rx="7" fill="none" stroke="currentColor" stroke-width="2.5"/><path d="M52 24h44M52 38h56M52 50h56M52 64h56M52 76h40" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" opacity=".6"/><rect x="99" y="31" width="14" height="12" rx="3" fill="#2997ff"/><rect x="95" y="69" width="14" height="12" rx="3" fill="#2997ff"/><path d="M52 92h22" stroke="#2997ff" stroke-width="3" stroke-linecap="round"/></svg>
+        <h3>Ti dà un rapporto</h3><p>Con le fonti, da aprire e controllare.</p>
+      </div>
+    </div>
+    <p class="small loghi-riga">Ce l'hanno <img src="assets/loghi/openai.svg" alt=""> ChatGPT, <img src="assets/loghi/gemini.svg" alt=""> Gemini, <img src="assets/loghi/claude.svg" alt=""> Claude e <img src="assets/loghi/perplexity.svg" alt=""> Perplexity, con nomi simili.</p>
+  </div>
+  <div class="extra">
+    <h4>Dove si trova</h4>
+    <p>ChatGPT, Gemini, Claude e Perplexity hanno tutti una funzione di ricerca approfondita, con nomi simili ("Deep Research", "Ricerca"). I limiti di uso dipendono dal piano: controlla la pagina aggiornata del tuo strumento.</p>
+  </div>
+</section>
+
+<section class="slide" data-title="Il caso dei bandi" data-steps="3">
+  <div class="in dense">
+    <p class="eyebrow">07 · Deep Research</p>
+    <h2>Dal tuo profilo al bando giusto.</h2>
+    <div class="panel"><svg class="vis flow" id="flusso-bandi" role="img" aria-label="Tu rispondi all'intervista, la ricerca approfondita legge decine di siti, ottieni una tabella di bandi da verificare"></svg></div>
+    <p class="lead ink stepcap"><span>Esempio: trovare i bandi aperti adatti al tuo studio.</span><span>Prima ti intervista: tipo di studio, zona, progetti, fatturato.</span><span>Poi cerca i bandi aperti e li confronta con il tuo profilo.</span><span>Tu apri i link ufficiali e controlli scadenze e requisiti.</span></p>
+  </div>
+  <script type="application/json" data-flow-for="flusso-bandi">
+  {
+    "cols": 4,
+    "boxes": [
+      { "id": "tu", "col": 0, "row": 0, "title": "Tu", "sub": "il tuo studio", "group": "me" },
+      { "id": "in", "col": 1, "row": 0, "title": "Intervista", "sub": "reverse prompting", "group": "ai", "step": 1 },
+      { "id": "dr", "col": 2, "row": 0, "title": "Deep Research", "sub": "cerca e legge", "group": "tool", "step": 2 },
+      { "id": "ta", "col": 3, "row": 0, "title": "Tabella", "sub": "bandi e punteggio", "group": "out", "step": 2 }
+    ],
+    "arrows": [
+      { "from": "tu", "to": "in", "step": 1 },
+      { "from": "in", "to": "dr", "step": 2 },
+      { "from": "dr", "to": "ta", "step": 2 },
+      { "from": "ta", "to": "tu", "step": 3, "dashed": true, "label": "controlli le fonti" }
+    ]
+  }
+  </script>
+</section>
+
+<section class="slide gray" data-title="Prompt bandi">
+  <div class="in dense">
+    <p class="eyebrow">07 · Deep Research</p>
+    <h2>Il prompt per i bandi.</h2>
+    <p class="lead">Attiva la ricerca approfondita, incolla, rispondi alle domande. Poi lascialo lavorare.</p>
+    <div class="prompt"><span class="tag">Bandi più adatti</span><pre id="p-bandi">Prima intervistami, una domanda alla volta, sul mio studio: tipo di lavori, zona, numero di persone, clienti e progetti tipici, fascia di fatturato, certificazioni.
+Poi cerca bandi, contributi e gare aperti in [REGIONE] e in Italia adatti al mio profilo, con scadenza dopo il [DATA].
+Risultato: una tabella con nome, ente, scadenza, importo, requisiti principali, punteggio di adattamento da 1 a 5 con il motivo, link ufficiale.
+Usa solo fonti ufficiali (enti finanziatori e pubbliche amministrazioni) e segnala quello che non sei riuscito a verificare.
+Escludi i bandi scaduti e quelli senza link ufficiale.</pre><button class="copy" data-copy-from="p-bandi">Copia</button></div>
+  </div>
+  <div class="extra">
+    <h4>Come usarlo</h4>
+    <p>[REGIONE]: la tua regione. [DATA]: oggi, così escludi i bandi scaduti. Prima di candidarti apri sempre il bando sul sito dell'ente: l'AI può sbagliare una scadenza o un requisito.</p>
+  </div>
+</section>
+
+<!-- ============ 08 GEMINI NOTEBOOK ============ -->
+<section class="slide dark filtro" data-title="Gemini Notebook" data-steps="3">
+  <div class="in">
+    <img class="logo-fuori grande" src="assets/loghi/gemini.svg" alt="">
+    <p class="eyebrow">08 · Gemini Notebook</p>
+    <h2>Un archivio che risponde.</h2>
+    <p class="lead">Gemini Notebook, fino a luglio 2026 NotebookLM: carichi i documenti e fai domande. Risponde solo da quelli.</p>
+    <div class="vignette">
+      <div class="vign" data-step="1">
+        <svg viewBox="0 0 160 110" aria-hidden="true"><path d="M10 18h26l8 8v40H10z" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round"/><path d="M16 38c4-4 8 4 12 0s6 2 10-1M16 50c4-3 7 3 11 0" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M52 8h26l8 8v40H52z" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round"/><path d="M58 28h22M58 38h22M58 48h14" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" opacity=".6"/><path d="M48 66l14 12M62 64l-2 14" stroke="#2997ff" stroke-width="2.5" stroke-linecap="round"/><rect x="92" y="34" width="58" height="70" rx="6" fill="none" stroke="#2997ff" stroke-width="3"/><path d="M104 34v70" stroke="#2997ff" stroke-width="3"/><path d="M114 54h26M114 66h26M114 78h18" stroke="#2997ff" stroke-width="2.5" stroke-linecap="round"/><path d="M66 84h20m-7-6l7 6-7 6" fill="none" stroke="#2997ff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <h3>Carichi i documenti</h3><p>PDF, scansioni, atti scritti a mano.</p>
+      </div>
+      <div class="vign" data-step="2">
+        <svg viewBox="0 0 160 110" aria-hidden="true"><rect x="20" y="20" width="120" height="52" rx="14" fill="none" stroke="currentColor" stroke-width="2.5"/><path d="M118 72l8 16-22-16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round"/><path d="M38 40h70M38 54h50" stroke="currentColor" stroke-width="3" stroke-linecap="round"/><text x="122" y="56" text-anchor="middle" font-size="26" font-weight="700" fill="#2997ff">?</text></svg>
+        <h3>Fai domande</h3><p>"Quando è cambiata la categoria catastale?"</p>
+      </div>
+      <div class="vign" data-step="3">
+        <svg viewBox="0 0 160 110" aria-hidden="true"><rect x="12" y="14" width="136" height="60" rx="14" fill="none" stroke="#2997ff" stroke-width="2.5"/><path d="M30 34h80M30 48h96M30 60h54" stroke="currentColor" stroke-width="3" stroke-linecap="round"/><circle cx="102" cy="60" r="8" fill="#2997ff"/><text x="102" y="64" text-anchor="middle" font-size="11" font-weight="700" fill="#000">1</text><path d="M102 68v16" stroke="#2997ff" stroke-width="2.5" stroke-dasharray="3 3"/><path d="M88 86h18l6 6v14H88z" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round"/></svg>
+        <h3>Risponde con la fonte</h3><p>Ogni frase rimanda al documento da cui viene.</p>
+      </div>
+    </div>
+  </div>
+  <div class="extra">
+    <h4>Il nome nuovo</h4>
+    <p>Dal 16 luglio 2026 NotebookLM si chiama Gemini Notebook: stesso prodotto, con i notebook sincronizzati anche dentro l'app Gemini. I vecchi link continuano a funzionare. Fonte: <a href="https://blog.google/innovation-and-ai/products/gemini-notebook/notebooklm-gemini-notebook/">blog di Google, luglio 2026</a>. Limiti e piani: controlla la pagina ufficiale.</p>
+  </div>
+</section>
+
+<section class="slide gray" data-title="Un notebook per cliente" data-steps="1">
+  <div class="in dense">
+    <p class="eyebrow">08 · Gemini Notebook</p>
+    <h2>Un notebook per ogni cliente.</h2>
+    <p class="lead">Esempio: la storia di un immobile ricostruita da visure, planimetrie e atti scritti a mano.</p>
+    <div class="io">
+      <div class="iocol">
+        <h3>Gli dai</h3>
+        <div class="item"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M10 38l4-12L32 8l8 8-18 18z" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round"/><path d="M8 42h32" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg><span>Visure, planimetrie, atti a mano<small>anche scansioni vecchie e cancellature</small></span></div>
+        <div class="item"><svg viewBox="0 0 48 48" aria-hidden="true"><rect x="6" y="11" width="36" height="26" rx="5" fill="none" stroke="currentColor" stroke-width="2.4"/><path d="M8 14l16 12 16-12" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round"/></svg><span>Email e verbali del cliente</span></div>
+      </div>
+      <div class="iomid" aria-hidden="true"><svg viewBox="0 0 120 60"><path d="M6 30h90m-14-12l14 12-14 12" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg><b>Gemini Notebook</b></div>
+      <div class="iocol">
+        <h3>Ottieni</h3>
+        <div class="item"><svg viewBox="0 0 48 48" aria-hidden="true"><rect x="6" y="9" width="36" height="30" rx="4" fill="none" stroke="currentColor" stroke-width="2.4"/><path d="M6 18h36M6 28h36M19 9v30" stroke="currentColor" stroke-width="2.4"/></svg><span>La storia dell'immobile<small>date, atti, cambi di categoria</small></span></div>
+        <div class="item"><svg viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="18" fill="none" stroke="currentColor" stroke-width="2.4"/><path d="M19 19a5 5 0 1 1 7 4.6c-1.3.6-2 1.6-2 3V29" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/><circle cx="24" cy="34" r="1.6" fill="currentColor"/></svg><span>Le incongruenze tra documenti<small>ognuna con la sua fonte</small></span></div>
+      </div>
+    </div>
+    <div class="prompt" data-step="1"><span class="tag">Prompt per Gemini Notebook</span><pre id="p-nb">Ricostruisci la storia dell'immobile in una tabella: data, documento, cosa cambia (proprietario, planimetria, categoria catastale, titoli edilizi).
+Poi elenca le incongruenze tra i documenti.
+Per ogni riga indica la fonte. Se un dato manca, scrivi "non trovato".</pre><button class="copy" data-copy-from="p-nb">Copia</button></div>
+  </div>
+  <div class="extra">
+    <h4>Come organizzarlo</h4>
+    <p>Un notebook per cliente o per pratica, con dentro tutto: atti, visure, planimetrie, email, verbali. Il prompt è corto perché il notebook risponde già solo dalle fonti caricate: basta chiedere la forma del risultato.</p>
+    <p>La lettura di scansioni e scritte a mano è molto buona, ma non perfetta: controlla sempre sul documento originale i dati che usi in una pratica. Limiti su numero di notebook e di fonti: vedi la pagina ufficiale di Gemini Notebook.</p>
+  </div>
+</section>
+
+<!-- ============ 09 AGENTI ============ -->
+<section class="slide dark" data-title="Dalla risposta al lavoro fatto" data-steps="1">
+  <div class="in">
+    <p class="eyebrow">09 · Agenti</p>
+    <h2>Dalla risposta al lavoro fatto.</h2>
+    <div class="cols2 stretch mt">
+      <div class="qcard"><span class="n">Chat</span><h3>Gli chiedi come si fa.</h3><p class="q">"Come rinomino 200 file in base al contenuto?"</p><p class="do">Ti spiega i passi. Il lavoro lo fai tu.</p></div>
+      <div class="qcard" data-step="1"><span class="n">Agente</span><h3>Gli dai l'obiettivo.</h3><p class="q">"Rinomina questi 200 file in base al contenuto."</p><p class="do">Apre i file, li legge, ti mostra il piano. Tu approvi, lui esegue.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide" data-title="Dove lavora un agente">
+  <div class="in">
+    <p class="eyebrow">09 · Agenti</p>
+    <h2>Dove lavora un agente.</h2>
+    <div class="cols3 stretch mt">
+      <div class="panel sticker"><span class="loghi"><img src="assets/loghi/claudecode.svg" alt="Claude Code"><img src="assets/loghi/openai.svg" alt="Codex"><img src="assets/loghi/gemini.svg" alt="Gemini CLI"></span><h3>Nelle tue cartelle</h3><p class="cardtxt mt">Claude Code, Codex, Gemini CLI: leggono, rinominano e creano file sul tuo computer.</p></div>
+      <div class="panel sticker"><span class="loghi"><img src="assets/loghi/chrome.svg" alt="Chrome"><img src="assets/loghi/openai.svg" alt="ChatGPT"><img src="assets/loghi/claude.svg" alt="Claude"></span><h3>Nel browser</h3><p class="cardtxt mt">ChatGPT in Chrome, Claude in Chrome: aprono i siti, cliccano, copiano i dati al posto tuo.</p></div>
+      <div class="panel sticker"><span class="loghi"><img src="assets/loghi/opencode.svg" alt="OpenCode"></span><h3>Senza abbonamento</h3><p class="cardtxt mt">OpenCode: lo stesso tipo di programma, con modelli gratuiti che cambiano nel tempo.</p></div>
+    </div>
+    <p class="small mt">Harness: il programma che dà all'AI le mani, cioè leggere file, usare il browser, chiedere il permesso prima di agire.</p>
+  </div>
+  <div class="extra">
+    <h4>Dove trovarli</h4>
+    <ul>
+      <li>Claude Code: <a href="https://claude.com/product/claude-code">claude.com/product/claude-code</a> (richiede un piano a pagamento di Claude).</li>
+      <li>Codex: <a href="https://openai.com/codex/">openai.com/codex</a> (con l'account ChatGPT; i limiti dipendono dal piano).</li>
+      <li>Gemini CLI: <a href="https://github.com/google-gemini/gemini-cli">github.com/google-gemini/gemini-cli</a>.</li>
+      <li>OpenCode: <a href="https://opencode.ai">opencode.ai</a>. I modelli gratuiti sono elencati in <a href="https://opencode.ai/docs/zen">opencode.ai/docs/zen</a> e cambiano spesso.</li>
+    </ul>
+    <p>Piani, prezzi e limiti cambiano: controlla la pagina ufficiale prima di scegliere.</p>
+  </div>
+</section>
+
+<!-- ============ 10 IL CERVELLO ============ -->
+<section class="slide" data-title="Stessa idea, nomi diversi">
+  <div class="in dense">
+    <p class="eyebrow">10 · Il cervello</p>
+    <h2>Stessa idea, nomi diversi.</h2>
+    <p class="lead">Ogni sessione parte da zero. Quello che l'agente deve sapere sta in file .md, testo semplice che rilegge all'inizio.</p>
+    <div class="tabs" data-tabs="harness"><button class="tab"><img src="assets/loghi/claudecode.svg" alt="">Claude Code</button><button class="tab"><img src="assets/loghi/openai.svg" alt="">Codex</button><button class="tab"><img src="assets/loghi/opencode.svg" alt="">OpenCode</button><button class="tab"><img src="assets/loghi/gemini.svg" alt="">Gemini CLI</button><button class="tab">Nelle chat</button></div>
+    <div data-tabpanel="harness"><div class="files sm">
+      <div class="file"><code>CLAUDE.md</code><h3>Istruzioni</h3><p>Nella cartella del progetto: regole per quel lavoro.</p></div>
+      <div class="file"><code>~/.claude/CLAUDE.md</code><h3>Chi sei</h3><p>Nella cartella utente: vale in tutti i progetti.</p></div>
+      <div class="file"><code>MEMORY.md</code><h3>Memoria</h3><p>La scrive Claude Code da solo. È attiva di default.</p></div>
+    </div></div>
+    <div data-tabpanel="harness"><div class="files sm">
+      <div class="file"><code>AGENTS.md</code><h3>Istruzioni</h3><p>Nella cartella del progetto: regole per quel lavoro.</p></div>
+      <div class="file"><code>~/.codex/AGENTS.md</code><h3>Chi sei</h3><p>Nella cartella utente: vale in tutti i progetti.</p></div>
+      <div class="file"><code>Memorie</code><h3>Memoria</h3><p>Spente di default: le accendi in Impostazioni, Personalizzazione.</p></div>
+    </div></div>
+    <div data-tabpanel="harness"><div class="files sm">
+      <div class="file"><code>AGENTS.md</code><h3>Istruzioni</h3><p>Lo stesso file di Codex: nella cartella del progetto.</p></div>
+      <div class="file"><code>~/.config/opencode/AGENTS.md</code><h3>Chi sei</h3><p>Nella cartella di configurazione: vale ovunque.</p></div>
+      <div class="file"><code>un file .md</code><h3>Memoria</h3><p>Non è automatica: a fine lavoro chiedigli di aggiornarla.</p></div>
+    </div></div>
+    <div data-tabpanel="harness"><div class="files sm">
+      <div class="file"><code>GEMINI.md</code><h3>Istruzioni</h3><p>Nella cartella del progetto.</p></div>
+      <div class="file"><code>~/.gemini/GEMINI.md</code><h3>Chi sei</h3><p>Nella cartella utente: vale ovunque.</p></div>
+      <div class="file"><code>/memory add</code><h3>Memoria</h3><p>Il comando salva un fatto nel file globale.</p></div>
+    </div></div>
+    <div data-tabpanel="harness"><div class="files sm">
+      <div class="file"><code>ChatGPT</code><h3>Personalizzazione</h3><p>Istruzioni su di te, memoria, Progetti con file e istruzioni.</p></div>
+      <div class="file"><code>Claude</code><h3>Progetti</h3><p>Istruzioni del progetto e file di conoscenza, più la memoria.</p></div>
+      <div class="file"><code>Gemini</code><h3>Gem</h3><p>Un assistente con istruzioni e file tuoi.</p></div>
+    </div></div>
+    <p class="small">Nelle chat non c'è un file da salvare: incolli lo stesso testo .md nelle istruzioni.</p>
+  </div>
+  <div class="extra">
+    <h4>Tutti i nomi in una tabella</h4>
+    <div class="scroll"><table>
+      <tr><th>Strumento</th><th>Istruzioni</th><th>Chi sei (globale)</th><th>Memoria</th></tr>
+      <tr><td>Claude Code</td><td>CLAUDE.md nel progetto</td><td>~/.claude/CLAUDE.md</td><td>automatica, attiva di default (MEMORY.md)</td></tr>
+      <tr><td>Codex</td><td>AGENTS.md nel progetto</td><td>~/.codex/AGENTS.md</td><td>automatica, spenta di default</td></tr>
+      <tr><td>OpenCode</td><td>AGENTS.md nel progetto</td><td>~/.config/opencode/AGENTS.md</td><td>un file .md che gli chiedi di aggiornare</td></tr>
+      <tr><td>Gemini CLI</td><td>GEMINI.md nel progetto</td><td>~/.gemini/GEMINI.md</td><td>comando /memory add</td></tr>
+    </table></div>
+    <p>Il simbolo ~ indica la tua cartella utente. I nomi possono cambiare con gli aggiornamenti: controlla la documentazione ufficiale dello strumento. Fonti: <a href="https://code.claude.com/docs/en/memory">documentazione di Claude Code</a>, <a href="https://learn.chatgpt.com/docs/customization/memories">documentazione di Codex</a>, novembre 2026.</p>
+  </div>
+</section>
+
+<section class="slide gray" data-title="Cosa metti in questi file" data-steps="2">
+  <div class="in dense">
+    <p class="eyebrow">10 · Il cervello</p>
+    <h2>Cosa metti in questi file.</h2>
+    <p class="lead">Lo schema dei nomi dei tuoi file? Lo scrivi una volta nelle istruzioni e non lo ripeti più.</p>
+    <div class="files">
+      <div class="file"><svg viewBox="0 0 40 48" aria-hidden="true"><path d="M4 4h22l10 10v30H4z" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round"/><path d="M26 4v10h10M11 24h18M11 31h18M11 38h11" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg><code>Istruzioni · scrivi tu</code><h3>Come si lavora qui</h3><p>Schema dei nomi, cartelle, cosa non toccare mai.</p></div>
+      <div class="file" data-step="1"><svg viewBox="0 0 40 48" aria-hidden="true"><path d="M4 4h22l10 10v30H4z" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round"/><path d="M26 4v10h10" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round"/><circle cx="20" cy="26" r="5" fill="none" stroke="currentColor" stroke-width="2.4"/><path d="M11 40a9 9 0 0 1 18 0" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg><code>Chi sei · scrivi tu</code><h3>Il tuo studio</h3><p>Clienti tipici, come lavori, come vuoi le risposte.</p></div>
+      <div class="file" data-step="2"><svg viewBox="0 0 40 48" aria-hidden="true"><path d="M4 4h22l10 10v30H4z" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round"/><path d="M26 4v10h10" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round"/><path d="M12 26l5 5 11-11M12 39h16" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg><code>Memoria · scrive lui</code><h3>Cosa ha imparato</h3><p>Le tue correzioni, le decisioni, gli errori da non ripetere.</p></div>
+    </div>
+    <p class="small">Il file "Chi sei" lo prepari con il prompt "Salva il contesto" della sezione 03.</p>
+  </div>
+  <div class="extra">
+    <h4>Come crearli</h4>
+    <p>Usa il reverse prompting della sezione 03: fatti intervistare su chi sei e come lavori, poi chiedi il riassunto in Markdown. Salvalo con il nome che usa il tuo strumento (slide precedente). Quando arrivi ai file, aggiungi alle istruzioni lo schema dei nomi che sceglierai.</p>
+    <h4>Per chi vuole andare oltre</h4>
+    <p>Gli assistenti che restano sempre attivi, come OpenClaw e Hermes, dividono gli stessi contenuti in più file: SOUL.md per il carattere dell'agente, USER.md per chi sei, MEMORY.md per la memoria. Sono strumenti avanzati, fuori dal perimetro di oggi.</p>
+  </div>
+</section>
+
+<!-- ============ 11 FILE E IMMAGINI ============ -->
+<section class="slide" data-title="Prima di dargli una cartella">
+  <div class="in">
+    <p class="eyebrow">11 · File e immagini</p>
+    <h2>Prima di dargli una cartella.</h2>
+    <div class="cols2 wide-r mt">
+      <ol class="rules">
+        <li>Lavora su una copia della cartella.</li>
+        <li>Chiedi il piano prima di qualsiasi modifica.</li>
+        <li>Le prime volte approva un passo alla volta.</li>
+        <li>Niente cancellazioni: i dubbi vanno in "Da controllare".</li>
+        <li>Comincia con 20 file, poi allarga.</li>
+      </ol>
+      <div class="panel" style="padding:max(14px,2cqw)">
+        <h3 class="mini">Tre cartelle per cominciare</h3>
+        <table class="ktable">
+          <tr><td>Download</td><td>Preventivi, fatture e schede tecniche, rinominati e divisi per tipo.</td></tr>
+          <tr><td>Una pratica</td><td>Visure, planimetrie, atti e DWG con data e tipo nel nome.</td></tr>
+          <tr><td>Foto</td><td>Le foto di un sopralluogo, raggruppate per stanza.</td></tr>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide gray" data-title="Prompt per file e immagini">
+  <div class="in dense">
+    <p class="eyebrow">11 · File e immagini</p>
+    <h2>Scegli la tua cartella.</h2>
+    <div class="tabs" data-tabs="cartelle"><button class="tab">Documenti</button><button class="tab">Immagini</button></div>
+    <div data-tabpanel="cartelle"><div class="prompt"><span class="tag">Rinomina documenti</span><pre id="p-doc">Analizza tutti i file di questa cartella: PDF, scansioni, immagini, documenti Office, DWG.
+Rinomina ogni file così: AAAA-MM-GG - Tipo - Soggetto - Dettagli.
+Leggi il contenuto per trovare data e tipo; per i DWG usa nome e metadati. Se non sei sicuro, aggiungi "verificare" al nome.
+Prima mostrami il piano in una tabella, nome vecchio e nome nuovo, e aspetta il mio OK.
+Mantieni le estensioni e annota ogni modifica in un file modifiche.md.
+Non cancellare file e non sovrascrivere file con lo stesso nome.</pre><button class="copy" data-copy-from="p-doc">Copia</button></div>
+      <p class="scarica"><a class="btn ghost" href="esempi/documenti-di-prova.zip" download="Documenti di prova.zip">Scarica la cartella di prova</a><span class="xs">Documenti inventati: visure, preventivi, verbali, una pianta</span></p></div>
+    <div data-tabpanel="cartelle"><div class="prompt"><span class="tag">Riordina immagini</span><pre id="p-img">Analizza le immagini di questa cartella come un assistente di architettura e interior design.
+1. Rinomina ogni immagine come Soggetto_Contesto_Colore, per esempio Poltrona_Soggiorno_Marrone.jpg. Il colore è quello del soggetto principale, non dello sfondo.
+2. Crea 4 cartelle per i contesti più frequenti (per esempio Interni, Esterni, Materiali, Arredi) e una cartella "Altro".
+3. Sposta ogni immagine nella sua cartella. In "Altro" metti quello che non riguarda l'architettura.
+Prima mostrami il piano e aspetta il mio OK. Se puoi, usa dei sub-agenti per lavorare in parallelo.
+Non cancellare e non modificare le immagini.</pre><button class="copy" data-copy-from="p-img">Copia</button></div>
+      <p class="scarica"><a class="btn ghost" href="esempi/immagini-di-prova.zip" download="Immagini di prova.zip">Scarica la cartella di prova</a><span class="xs">Foto libere da diritti con nomi a caso</span></p></div>
+  </div>
+  <div class="extra">
+    <h4>Come usarli</h4>
+    <p>Apri il tuo agente (Claude Code, Codex, Gemini CLI, OpenCode) nella cartella da riordinare, poi incolla il prompt. Puoi cambiare lo schema dei nomi a piacere: l'importante è che sia sempre lo stesso.</p>
+    <p>Sub-agenti: copie dell'agente che lavorano in parallelo su parti diverse della cartella. Alcuni strumenti li usano da soli, altri vanno chiesti nel prompt.</p>
+    <h4>Le cartelle di prova</h4>
+    <p>Se non hai con te una cartella vera, scarica una delle due cartelle di prova e scompattala. I documenti sono inventati; le foto vengono da Wikimedia Commons e sono di pubblico dominio (CC0).</p>
+  </div>
+</section>
+
+<!-- ============ 12 BROWSER ============ -->
+<section class="slide" data-title="L'agente nel browser" data-steps="3">
+  <div class="in dense">
+    <p class="eyebrow">12 · Browser</p>
+    <h2>L'agente gira i siti al posto tuo.</h2>
+    <div class="panel"><svg class="vis flow" id="flusso-browser" role="img" aria-label="Tu dai il brief, l'agente nel browser visita tre negozi, ottieni una tabella con prodotti, misure e prezzi"></svg></div>
+    <p class="lead ink stepcap"><span class="loghi-riga"><img src="assets/loghi/openai.svg" alt=""> ChatGPT e <img src="assets/loghi/claude.svg" alt=""> Claude dentro <img src="assets/loghi/chrome.svg" alt=""> Chrome aprono le pagine, cliccano e copiano i dati.</span><span>Gli dai il brief: stanza, misure, budget, stile.</span><span>Visita i negozi e chiede il permesso per ogni sito nuovo.</span><span>Ti torna una tabella. Il carrello e l'acquisto restano a te.</span></p>
+  </div>
+  <script type="application/json" data-flow-for="flusso-browser">
+  {
+    "cols": 4,
+    "boxes": [
+      { "id": "tu", "col": 0, "row": 0, "title": "Tu", "sub": "il brief", "group": "me" },
+      { "id": "ag", "col": 1, "row": 0, "title": "Agente", "sub": "nel browser", "group": "ai", "step": 1 },
+      { "id": "si", "col": 2, "row": 0, "title": "3 negozi", "sub": "uno alla volta", "group": "tool", "step": 2 },
+      { "id": "ta", "col": 3, "row": 0, "title": "Tabella", "sub": "misure e prezzi", "group": "out", "step": 3 }
+    ],
+    "arrows": [
+      { "from": "tu", "to": "ag", "step": 1 },
+      { "from": "ag", "to": "si", "step": 2 },
+      { "from": "si", "to": "ta", "step": 3 },
+      { "from": "ta", "to": "tu", "step": 3, "dashed": true, "label": "decidi tu" }
+    ]
+  }
+  </script>
+  <div class="extra">
+    <h4>Sicurezza</h4>
+    <ul>
+      <li>Lascia che chieda il permesso sito per sito. Evita l'opzione "consenti su tutti i siti".</li>
+      <li>Non fargli inserire password, dati di pagamento o documenti personali.</li>
+      <li>Le pagine web possono contenere istruzioni nascoste rivolte all'AI: se l'agente propone qualcosa che non gli hai chiesto, fermalo.</li>
+    </ul>
+    <p>Disponibilità e piani dell'estensione cambiano: controlla la pagina ufficiale dello strumento che usi.</p>
+  </div>
+</section>
+
+<section class="slide gray" data-title="Prompt lista d'arredo">
+  <div class="in dense">
+    <p class="eyebrow">12 · Browser</p>
+    <h2>Prova: la lista d'arredo per un cliente.</h2>
+    <div class="prompt"><span class="tag">Lista d'arredo</span><pre id="p-arredo">Sto arredando un [STANZA] di [MQ] m² per un cliente. Budget totale: [BUDGET] €. Stile: [STILE].
+Cerca su [NEGOZIO 1], [NEGOZIO 2] e [NEGOZIO 3] e prepara una selezione: divano, poltrona, tavolino, tappeto, lampada da terra.
+Risultato: una tabella con elemento, nome del prodotto, misure, prezzo, disponibilità, link. Aggiungi il totale e il budget che resta.
+Ogni pezzo deve stare nella stanza. Se qualcosa non è chiaro, fermati e chiedimi.
+Non aggiungere niente al carrello, non fare login, non comprare.</pre><button class="copy" data-copy-from="p-arredo">Copia</button></div>
+    <p class="small">Variante: lo stesso materiale da tre fornitori, per confrontare prezzo, tempi di consegna e schede tecniche.</p>
+  </div>
+  <div class="extra">
+    <h4>Come usarlo</h4>
+    <p>[STANZA]: soggiorno, camera, studio. [MQ]: metri quadri. [BUDGET]: cifra totale. [STILE]: due o tre parole, per esempio "scandinavo, legno chiaro". [NEGOZIO]: i siti dove compri di solito.</p>
+  </div>
+</section>
+
+<!-- ============ 13 BONUS ============ -->
+<section class="slide gray" data-title="Bonus: questionario cliente">
+  <div class="in dense">
+    <p class="eyebrow">13 · Bonus</p>
+    <h2>Il questionario cliente diventa una app.</h2>
+    <p class="lead">Il reverse prompting girato verso i clienti: una pagina fa le domande e alla fine ti manda il brief. La usi anche al primo incontro, sul tablet.</p>
+    <div class="prompt"><span class="tag">Mini app</span><pre id="p-app">Crea una semplice web app di una sola pagina: un questionario per i nuovi clienti di uno studio di architettura che vogliono [TIPO DI LAVORO].
+Una domanda alla volta, con una barra di avanzamento: fascia di budget, tempi, ambienti, stile, vincoli, chi decide.
+Alla fine mostra un brief ordinato con tre pulsanti: "Copia", "Invia su WhatsApp" al numero [IL TUO NUMERO] e "Invia per email" a [LA TUA EMAIL].
+Deve funzionare bene sul telefono, in italiano semplice, senza login.
+Non salvare le risposte su nessun server e non chiedere codice fiscale o documenti.</pre><button class="copy" data-copy-from="p-app">Copia</button></div>
+    <p class="small loghi-riga">Si costruisce in <img src="assets/loghi/claude.svg" alt=""> Claude o con Canvas di <img src="assets/loghi/openai.svg" alt=""> ChatGPT. Piano B: fatti scrivere le domande e mettile in un <img src="assets/loghi/forms.svg" alt=""> Modulo Google.</p>
+  </div>
+  <div class="extra">
+    <h4>Come usarlo</h4>
+    <p>[TIPO DI LAVORO]: per esempio "ristrutturare un appartamento". [IL TUO NUMERO]: il numero WhatsApp con il prefisso internazionale, senza + e senza spazi (per esempio 39 seguito dal numero). [LA TUA EMAIL]: l'indirizzo dove vuoi ricevere il brief. I pulsanti aprono WhatsApp o la posta del cliente con il testo già scritto: nessun dato resta online.</p>
+    <p>Prova l'app sul tuo telefono prima di mandarla a un cliente. Per condividerla, Claude e ChatGPT permettono di pubblicare il risultato con un link.</p>
+  </div>
+</section>
+
+<!-- ============ CHIUSURA ============ -->
+<section class="slide gray" data-title="Prossimi passi" data-steps="4">
+  <div class="in">
+    <p class="eyebrow">Prossimi passi</p>
+    <h2>Una cosa da provare questa settimana.</h2>
+    <ol class="rules mt">
+      <li data-step="1">Detta tutti i prompt di questa settimana.</li>
+      <li data-step="2">Fatti la guida di stile e usala per tre email.</li>
+      <li data-step="3">Apri un notebook per un cliente e caricaci i suoi documenti.</li>
+      <li data-step="4">Fai rinominare a un agente una copia di 20 file.</li>
+    </ol>
+    <p class="small mt">Parti dal lavoro che ti pesa di più.</p>
+  </div>
+</section>
+
+<section class="slide dark" data-title="Grazie">
+  <div class="in linkslide">
+    <h1>Grazie.</h1>
+    <p class="lead">Slide e prompt restano a questo link.</p>
+    <img class="qr" src="assets/qr.png" alt="Codice QR del deck">
+    <p class="url">jonathanlivingston86.github.io/productivity-workshop</p>
+    <p class="small">Andrea Lucarelli · ai.andrealucarelli.com</p>
+  </div>
+</section>
+
+</main>
+
+<div class="ui" id="ui">
+  <span class="brand">Productivity · Dispensa</span>
+  <div class="grp">
+    <button id="bIndex" title="Indice (G)">Indice</button>
+    <button id="bMode" title="Cambia modalità (H)">Dispensa</button>
+    <button id="bFs" title="Schermo intero (F)">Schermo intero</button>
+    <button id="bPrint" title="Stampa o salva in PDF">Stampa / PDF</button>
+  </div>
+</div>
+<div class="progress" id="progress"></div>
+<div class="hint">Frecce per muoverti · G indice · H dispensa · F schermo intero</div>
+<div class="overlay" id="overlay"><h4>Indice</h4><ol id="overlayList"></ol></div>
+
+<script src="moduli/flusso.js"></script>
+<script src="moduli/conto.js"></script>
+<script src="moduli/gara.js"></script>
+<script src="deck.js"></script>
+</body>
+</html>
