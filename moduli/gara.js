@@ -1,4 +1,5 @@
 /* Modulo: gara tra tastiera e voce. Ogni [data-crono] ha un display .tempo e un pulsante .via (Via / Stop / Azzera).
+   Se la slide ha un campo [data-prova], Via lo svuota e ci mette il cursore.
    Alla fine mostra quante volte la voce è stata più veloce in [data-esito]. */
 (() => {
 'use strict';
@@ -6,6 +7,7 @@ const fmt = ms => (ms / 1000).toLocaleString('it-IT', { minimumFractionDigits: 1
 function init() {
   document.querySelectorAll('[data-gara]').forEach(gara => {
     const esito = (gara.closest('.slide') || document).querySelector('[data-esito]');
+    const prova = (gara.closest('.slide') || document).querySelector('[data-prova]');
     const tempi = {};
     const aggiornaEsito = () => {
       if (!esito) return;
@@ -19,6 +21,7 @@ function init() {
       let t0 = 0, timer = null, stato = 'pronto';
       btn.addEventListener('click', () => {
         if (stato === 'pronto') {
+          if (prova) { prova.value = ''; prova.focus(); }
           t0 = performance.now(); stato = 'corre'; btn.textContent = 'Stop'; c.classList.add('corre');
           timer = setInterval(() => { disp.textContent = fmt(performance.now() - t0); }, 100);
         } else if (stato === 'corre') {

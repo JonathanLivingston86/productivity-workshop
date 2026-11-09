@@ -15,7 +15,7 @@
 ## Mappa
 
 - `index.html`: slide. `data-po` = solo presentatore; `data-steps` e `data-step` = passaggi.
-- `deck.js`: motore (non modificare). `moduli/flusso.js`: flussi. `moduli/conto.js`: conto delle ore. `moduli/gara.js`: gara tastiera contro voce.
+- `deck.js`: motore (non modificare). `moduli/flusso.js`: flussi. `moduli/conto.js`: conto delle ore. `moduli/gara.js`: gara tastiera contro voce, con il campo `[data-prova]` dove si scrive o si detta.
 - `style.css`: stile comune; gli stili su misura sono in fondo.
 - `assets/loghi/`: loghi SVG dei prodotti citati (Simple Icons CC0, Wispr Flow dal sito ufficiale).
 - `esempi/`: zip delle due cartelle di prova scaricabili dalla slide dei file, con `FONTI.md`.

@@ -10,6 +10,7 @@ Ultimo aggiornamento: 4 novembre 2026.
 
 ## Completate
 
+- [x] Campo di prova nella gara tastiera contro voce · prova: il 9 novembre 2026 Via svuota il campo e ci mette il cursore, Invio va a capo senza cambiare slide, esito calcolato; controllo impaginazione 0 problemi a 1024x768, 1280x720, 1920x1080; a 375 px nessuno scorrimento laterale; campo nascosto nel PDF.
 - [x] Pubblicato su GitHub Pages · prova: repository pubblico `JonathanLivingston86/productivity-workshop`, build "built" il 4 novembre 2026; pagina, QR, loghi, script e i due zip rispondono 200; `kit-presentatore` risponde 404.
 - [x] Vecchio sito ritirato · prova: Pages di `prompt-productivity` disattivato (API 404), repository archiviato con rimando al nuovo deck, copie locali spostate nel Cestino di Windows, il 4 novembre 2026.
 - [x] Seconda revisione di Andrea applicata · prova: 32 slide (dettatura unita nella 5, nuovo esempio di meta prompting, titolo della 9, card della 26 allargata, cervello prima dei file, chiusura riscritta); controllo impaginazione 0 problemi a 1024x768, 1280x720, 1920x1080; dispensa 32 slide e 20 blocchi `.extra`; 375 px senza scorrimento laterale; PDF rigenerato e controllato a campione.

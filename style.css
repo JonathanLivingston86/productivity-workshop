@@ -293,6 +293,10 @@ body.handout .hint{display:none}
 .crono h3 svg{width:1.5em;height:1.5em;color:var(--blue-d)}
 .crono .tempo{font-family:var(--mono);font-size:max(36px,6cqw);font-weight:600;letter-spacing:-.03em;line-height:1;color:#f5f5f7}
 .compito{background:#1c1c1e;border-left:3px solid var(--blue-d);border-radius:max(8px,1cqw);padding:.8em 1.1em;font-size:var(--fs-p);line-height:1.4;color:#f5f5f7}
+.prova{width:100%;box-sizing:border-box;background:#1c1c1e;color:#f5f5f7;border:1px solid #3a3a3c;border-radius:max(8px,1cqw);padding:.7em 1.1em;font:inherit;font-size:var(--fs-p);line-height:1.4;resize:none}
+.prova:focus{outline:none;border-color:var(--blue-d)}
+.prova::placeholder{color:#8e8e93}
+@media print{.prova{display:none}}
 .esito{font-size:var(--fs-p);font-weight:600;color:var(--blue-d);min-height:1.4em}
 @container (max-width:640px){.gara{grid-template-columns:1fr}}
 
